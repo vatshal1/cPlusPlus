@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void jodo(int *ar, int sI, int eI)
+void combine(int *ar, int sI, int eI)
 {
     int mid = sI + (eI - sI) / 2;
 
@@ -62,7 +62,7 @@ void mergeSort(int *a, int start, int end)
     mergeSort(a, mid + 1, end);
 
     //* merge both left and right side array
-    jodo(a, start, end);
+    combine(a, start, end);
 }
 
 int main()
