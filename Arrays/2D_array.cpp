@@ -101,7 +101,7 @@ int main()
     // cout << endl;
 
     printArray_col(arr, rows, cols);
-    //!-> print sum colWise..........
+    //!-> print sum colWise..........2
     // cout << "\n\n---------print sum colwise-------------"
     //      << endl;
     // int result_col = printColwiseSum(arr, rows, cols);
