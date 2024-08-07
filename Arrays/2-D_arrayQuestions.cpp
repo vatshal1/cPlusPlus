@@ -2,7 +2,23 @@
 #include <iostream>
 using namespace std;
 
-void transpose(int arr[][4], int r, int c)
+//* for square matrices only.......
+void transpose1(int (&a)[4][4], int r, int c)
+{
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            if (i > j)
+            {
+                swap(a[i][j], a[j][i]);
+            }
+        }
+    }
+}
+
+//*for all matrices..........
+void transpose2(int (&arr)[3][4], int r, int c)
 {
     int a[c][r];
     for (int i = 0; i < c; i++)
@@ -22,9 +38,11 @@ void transpose(int arr[][4], int r, int c)
         cout << endl;
     }
 }
+
 int main()
 {
-    int arr[3][4];
+    // int arr[3][4];
+    int arr[4][4];
     int rows = sizeof(arr) / sizeof(arr[0]);
     int cols = sizeof(arr[0]) / sizeof(arr[0][0]);
 
@@ -49,7 +67,18 @@ int main()
     }
     cout << endl;
 
-    transpose(arr, rows, cols);
+    // transpose2(arr, rows, cols);
+    transpose1(arr, rows, cols);
 
+    cout << "Transpose of array: " << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
     return 0;
 }

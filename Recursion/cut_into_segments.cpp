@@ -5,11 +5,13 @@ using namespace std;
 
 int segments(int target, int x, int y, int z)
 {
-
+    //* base cases
     if (target < 0)
         return INT_MIN;
     if (target == 0)
         return 0;
+
+    //* recursive cases
     int ans1 = segments(target - x, x, y, z) + 1;
     int ans2 = segments(target - y, x, y, z) + 1;
     int ans3 = segments(target - z, x, y, z) + 1;
